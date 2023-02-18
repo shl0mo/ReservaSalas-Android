@@ -2,6 +2,7 @@ package com.example.reservasalas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_admin);
+        setContentView(R.layout.activity_main);
     }
 
     public void botaoLogar (View v) {
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (usuario.equals("admin") && senha.equals("admin")) { // Redirecionamento para o menu do administrador
-            Toast.makeText(this, "Redirecionando para o menu do administrador", Toast.LENGTH_SHORT).show();
+            View view_login = findViewById(R.id.viewLogin);
+            Intent in = new Intent(MainActivity.this, MenuAdminActivity.class);
+            startActivity(in);
             return;
         }
         Toast.makeText(this, "Procurando pelo usuário", Toast.LENGTH_SHORT).show();

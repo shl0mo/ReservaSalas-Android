@@ -12,7 +12,7 @@
         android:theme="@style/Theme.ReservaSalas"
         tools:targetApi="31">
         <activity
-            android:name=".MenuAdmin"
+            android:name=".MenuAdminActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
