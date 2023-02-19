@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="TextView" />
+            android:text="Selecione uma opção"
+            android:layout_marginBottom="15dp"/>
 
         <Button
             android:id="@+id/reservarSala"

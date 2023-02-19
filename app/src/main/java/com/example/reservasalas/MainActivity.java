@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (usuario.equals("admin") && senha.equals("admin")) { // Redirecionamento para o menu do administrador
-            View view_login = findViewById(R.id.viewLogin);
+            Globais.id = "-1";
+            Globais.usuario = "admin";
             Intent in = new Intent(MainActivity.this, MenuAdminActivity.class);
             startActivity(in);
             return;
@@ -43,14 +44,19 @@ public class MainActivity extends AppCompatActivity {
         String sql = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND senha = '" + senha + "';";
         Cursor cursor = getDB().getReadableDatabase().rawQuery(sql, null);
         int ocorrencias = 0;
+        String id = "";
         while (cursor.moveToNext()) {
             ocorrencias++;
+            cursor.getString(0);
         }
         if (ocorrencias == 0) {
             Toast.makeText(this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, "Redirecionando para o menu do usuário", Toast.LENGTH_SHORT).show();
+        Globais.id = id;
+        Globais.usuario = usuario;
+        Intent in = new Intent(MainActivity.this, MenuUsuarioActivity.class);
+        startActivity(in);
     }
 
     public DB getDB() {
