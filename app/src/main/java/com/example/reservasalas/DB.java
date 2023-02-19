@@ -12,21 +12,19 @@ import androidx.annotation.Nullable;
 public class DB extends SQLiteOpenHelper {
     public DB(@Nullable Context context) {
         super(context, "reserva_salas", null, 1);
-        System.out.println("DATABASE CRIADA");
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String tabela_usuarios_3 = "CREATE TABLE IF NOT EXISTS usuarios_3 (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, sobrenome TEXT, usuario TEXT, senha TEXT, tipo TEXT);";
-        db.execSQL(tabela_usuarios_3);
-
+        String tabela_usuarios = "CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, sobrenome TEXT, usuario TEXT, senha TEXT, tipo TEXT);";
+        db.execSQL(tabela_usuarios);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        String tabela_usuarios_3 = "DROP TABLE IF EXISTS usuarios_3";
-        db.execSQL(tabela_usuarios_3);
+        String tabela_usuarios = "DROP TABLE IF EXISTS usuarios";
+        db.execSQL(tabela_usuarios);
         onCreate(db);
     }
 
@@ -38,7 +36,7 @@ public class DB extends SQLiteOpenHelper {
         valores.put("usuario", usuario);
         valores.put("senha", senha);
         valores.put("tipo", tipo);
-        db.insert("usuarios_3", null, valores);
+        db.insert("usuarios", null, valores);
         db.close();
     }
 }

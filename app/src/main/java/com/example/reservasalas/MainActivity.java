@@ -40,14 +40,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(in);
             return;
         }
-        this.db.adicionaUsuario("Paulo", "D'Arc", "johanna", "senhajoana", "Professor");
-        String sql = "SELECT * FROM usuarios_3";
-        Cursor cursor = this.db.getReadableDatabase().rawQuery(sql, null);
-        String nome = "";
+        String sql = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND senha = '" + senha + "';";
+        Cursor cursor = getDB().getReadableDatabase().rawQuery(sql, null);
+        int ocorrencias = 0;
         while (cursor.moveToNext()) {
-            nome = cursor.getString(1);
-            System.out.println("NOME: " + nome);
+            ocorrencias++;
         }
-        Toast.makeText(this, "Usuário adicionado com sucesso. Banco de dados criado", Toast.LENGTH_SHORT).show();
+        if (ocorrencias == 0) {
+            Toast.makeText(this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Toast.makeText(this, "Redirecionando para o menu do usuário", Toast.LENGTH_SHORT).show();
+    }
+
+    public DB getDB() {
+        return this.db;
     }
 }
