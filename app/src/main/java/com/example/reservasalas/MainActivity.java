@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editText_senha = findViewById(R.id.senha);
         String senha = editText_senha.getText().toString();
         if (usuario.equals("")  || senha.equals("")) { // A inserção do usuário e da senha é obrigatória
-            Toast.makeText(this, "É necessário prreencher todos os campos de dados", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
             return;
         }
         if (usuario.equals("admin") && senha.equals("admin")) { // Redirecionamento para o menu do administrador
