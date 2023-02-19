@@ -16,13 +16,16 @@ import java.sql.ResultSet;
 import javax.xml.transform.Result;
 
 public class MainActivity extends AppCompatActivity {
-    DB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.db = new DB(MainActivity.this);
+    }
+
+    protected void onStart () {
+        super.onStart();
+        Globais.db = new DB(MainActivity.this);
     }
 
     public void botaoLogar (View v) throws SQLException {
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         String sql = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND senha = '" + senha + "';";
-        Cursor cursor = getDB().getReadableDatabase().rawQuery(sql, null);
+        Cursor cursor = Globais.db.getReadableDatabase().rawQuery(sql, null);
         int ocorrencias = 0;
         String id = "";
         while (cursor.moveToNext()) {
@@ -57,9 +60,5 @@ public class MainActivity extends AppCompatActivity {
         Globais.usuario = usuario;
         Intent in = new Intent(MainActivity.this, MenuUsuarioActivity.class);
         startActivity(in);
-    }
-
-    public DB getDB() {
-        return this.db;
     }
 }
