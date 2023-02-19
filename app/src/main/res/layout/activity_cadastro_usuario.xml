@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:justifyContent="space_evenly" >
+            >
 
             <TextView
                 android:id="@+id/labelNomeCadastro"
@@ -144,9 +144,8 @@
 
             <Spinner
                 android:id="@+id/tipoCadastro"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:width="200dp"/>
         </LinearLayout>
 
