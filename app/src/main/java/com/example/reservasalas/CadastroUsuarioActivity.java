@@ -7,35 +7,52 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class CadastroUsuarioActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class CadastroUsuarioActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_usuario);
-        Spinner spinner = findViewById(R.id.tipoCadastro);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tipos, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+
+        RadioButton radio_professor = (RadioButton) findViewById(R.id.radio_professor);
+        RadioButton radio_funcionario = (RadioButton) findViewById(R.id.radio_funcionario);
+
+        radio_professor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((RadioButton) view).isChecked();
+                switch(view.getId()) {
+                    case R.id.radio_professor:
+                        if (checked)
+                            break;
+                    case R.id.radio_funcionario:
+                        if (checked)
+                            break;
+                }
+            }
+        });
+
+        radio_funcionario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((RadioButton) view).isChecked();
+                switch(view.getId()) {
+                    case R.id.radio_professor:
+                        if (checked)
+                            break;
+                    case R.id.radio_funcionario:
+                        if (checked)
+                            break;
+                }
+            }
+        });
     }
 
-    protected void onStart () {
-        super.onStart();
-
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String text = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

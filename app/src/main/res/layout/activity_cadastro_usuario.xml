@@ -140,13 +140,21 @@
                 android:layout_weight="1"
                 android:text="Tipo"
                 android:width="75dp"
-                android:gravity="end"/>
-
-            <Spinner
-                android:id="@+id/tipoCadastro"
-                android:layout_width="200dp"
+                android:gravity="end"
+                />
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:width="200dp"/>
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_professor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Professor" />
+                <RadioButton android:id="@+id/radio_funcionario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Funcionário" />
+            </RadioGroup>
         </LinearLayout>
 
         <Button
