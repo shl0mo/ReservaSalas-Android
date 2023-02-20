@@ -17,6 +17,55 @@ public class ReservaSalaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserva_sala);
+
+        RadioButton radioButton_sala_reuniao = findViewById(R.id.radioReservaSalaReuniao);
+        RadioButton radioButton_auditorio = findViewById(R.id.radioReservaAuditorio);
+        RadioButton radioButton_lab_graduacao = findViewById(R.id.radioReservaLaboratorioGraduacao);
+
+        radioButton_sala_reuniao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((RadioButton) view).isChecked();
+                switch(view.getId()) {
+                    case R.id.radio_professor:
+                        if (checked)
+                            break;
+                    case R.id.radio_funcionario:
+                        if (checked)
+                            break;
+                }
+            }
+        });
+
+        radioButton_auditorio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((RadioButton) view).isChecked();
+                switch(view.getId()) {
+                    case R.id.radio_professor:
+                        if (checked)
+                            break;
+                    case R.id.radio_funcionario:
+                        if (checked)
+                            break;
+                }
+            }
+        });
+
+        radioButton_lab_graduacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((RadioButton) view).isChecked();
+                switch(view.getId()) {
+                    case R.id.radio_professor:
+                        if (checked)
+                            break;
+                    case R.id.radio_funcionario:
+                        if (checked)
+                            break;
+                }
+            }
+        });
     }
 
     public void reservar (View v) {
@@ -25,7 +74,7 @@ public class ReservaSalaActivity extends AppCompatActivity {
         EditText editText_andar = findViewById(R.id.andarReservaSala);
         RadioButton radioButton_sala_reuniao = findViewById(R.id.radioReservaSalaReuniao);
         RadioButton radioButton_auditorio = findViewById(R.id.radioReservaAuditorio);
-        RadioButton radioButton_lab_graduacao = findViewById(R.id.radioLaboratorioGraduacao);
+        RadioButton radioButton_lab_graduacao = findViewById(R.id.radioReservaLaboratorioGraduacao);
         String numero = editText_numero.getText().toString();
         String bloco = editText_bloco.getText().toString();
         String andar = editText_andar.getText().toString();
