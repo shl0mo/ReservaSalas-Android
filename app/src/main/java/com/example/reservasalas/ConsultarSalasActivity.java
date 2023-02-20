@@ -83,6 +83,5 @@ public class ConsultarSalasActivity extends AppCompatActivity {
             linha.addView(tipo_linha);
             tabela.addView(linha);
         }
-
     }
 }

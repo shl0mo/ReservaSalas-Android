@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:width="200dp"
             android:layout_height="wrap_content"
+            android:onClick="reservarSala"
             android:text="Reservar Sala" />
 
         <Button
@@ -33,6 +34,7 @@
             android:layout_width="wrap_content"
             android:width="200dp"
             android:layout_height="wrap_content"
+            android:onClick="consultarSalas"
             android:text="Consultar Salas" />
 
         <Button

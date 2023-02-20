@@ -19,7 +19,7 @@ public class DB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String tabela_usuarios = "CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, sobrenome TEXT, usuario TEXT, senha TEXT, tipo TEXT);";
-        String tabela_salas = "CREATE TABLE IF NOT EXISTS salas (id INTEGER PRIMARY KEY AUTOINCREMENT, numero TEXT, bloco TEXT, andar TEXT, tipo TEXT);";
+        String tabela_salas = "CREATE TABLE IF NOT EXISTS salas (id INTEGER PRIMARY KEY AUTOINCREMENT, numero TEXT, bloco TEXT, andar TEXT, tipo TEXT, reservada INTEGER);";
         db.execSQL(tabela_usuarios);
         db.execSQL(tabela_salas);
     }
@@ -53,6 +53,7 @@ public class DB extends SQLiteOpenHelper {
         valores.put("bloco", bloco);
         valores.put("andar", andar);
         valores.put("tipo", tipo);
+        valores.put("reservada", 0);
         db.insert("salas", null, valores);
         db.close();
     }
