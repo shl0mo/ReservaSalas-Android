@@ -20,7 +20,8 @@ public class MenuUsuarioActivity extends AppCompatActivity {
     }
 
     public void consultarSalas (View v) {
-
+        Intent in = new Intent(MenuUsuarioActivity.this, ConsultarSalasActivity.class);
+        startActivity(in);
     }
 
     public void sair (View v) {
