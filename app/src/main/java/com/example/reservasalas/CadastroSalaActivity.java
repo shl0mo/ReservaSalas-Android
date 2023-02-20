@@ -2,6 +2,7 @@ package com.example.reservasalas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -99,5 +100,10 @@ public class CadastroSalaActivity extends AppCompatActivity {
         }
         Globais.db.cadastraSala(numero, bloco, andar, tipo);
         Toast.makeText(this, "Sala cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+    }
+
+    public void voltar (View v) {
+        Intent in = new Intent(CadastroSalaActivity.this, MenuAdminActivity.class);
+        startActivity(in);
     }
 }
