@@ -22,4 +22,11 @@ public class MenuUsuarioActivity extends AppCompatActivity {
     public void consultarSalas (View v) {
 
     }
+
+    public void sair (View v) {
+        Globais.id = "";
+        Globais.usuario = "";
+        Intent in = new Intent(MenuUsuarioActivity.this, MainActivity.class);
+        startActivity(in);
+    }
 }

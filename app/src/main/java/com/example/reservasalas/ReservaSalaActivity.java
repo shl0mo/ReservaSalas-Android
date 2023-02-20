@@ -32,6 +32,8 @@ public class ReservaSalaActivity extends AppCompatActivity {
         if (radioButton_sala_reuniao.isChecked()) tipo = "Sala de Reunião";
         else if (radioButton_auditorio.isChecked()) tipo = "Auditório";
         else if (radioButton_lab_graduacao.isChecked()) tipo = "Laboratório de Graduação";
+        EditText editText_data = findViewById(R.id.dataReservaSala);
+        String data = editText_data.getText().toString();
         SQLiteDatabase db = Globais.db.getWritableDatabase();
         String query = "SELECT * FROM salas WHERE numero = \"" + numero + "\" AND bloco = \"" + bloco + "\" AND andar = \"" + andar + "\" AND tipo = \"" + tipo + "\";";
         Cursor cursor = db.rawQuery(query, null);
@@ -39,9 +41,12 @@ public class ReservaSalaActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             ocorrencias++;
         }
-        if (ocorrencias > 0) {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+        if (ocorrencias == 0) {
+            Toast.makeText(this, "A sala solicitada não está cadastrada no banco de dados", Toast.LENGTH_SHORT).show();
+            return;
         }
+        query = "SELECT * FROM reservas WHERE ";
+
     }
 
     public void cancelar (View v) {
