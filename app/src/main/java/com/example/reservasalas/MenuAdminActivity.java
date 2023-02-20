@@ -20,6 +20,14 @@ public class MenuAdminActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void consultarUsuario (View v) {
+
+    }
+
+    public void alterarUsuario (View v) {
+
+    }
+
     public void sairMenuAdmin (View v) {
         Globais.id = "";
         Globais.usuario = "";
