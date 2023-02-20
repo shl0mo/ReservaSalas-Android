@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -55,6 +56,24 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void cadastrar (View v) {
+        EditText editText_nome = findViewById(R.id.nomeCadastro);
+        EditText editText_sobrenome = findViewById(R.id.sobrenomeCadastro);
+        EditText editText_usuario = findViewById(R.id.usuarioCadastro);
+        EditText editText_senha = findViewById(R.id.senhaCadastro);
+        RadioButton radioButton_professor = findViewById(R.id.radio_professor);
+        RadioButton radioButton_funcionario = findViewById(R.id.radio_funcionario);
+        String nome = editText_nome.getText().toString();
+        String sobrenome = editText_sobrenome.getText().toString();
+        String usuario = editText_usuario.getText().toString();
+        String senha = editText_senha.getText().toString();
+        if (nome.equals("") || sobrenome.equals("") || usuario.equals("") || senha.equals("") || (!radioButton_professor.isChecked() && !radioButton_funcionario.isChecked())) {
+            Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
     }
 
     public void voltarCadastro (View v) {
