@@ -3,6 +3,8 @@ package com.example.reservasalas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -69,6 +71,18 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         String sobrenome = editText_sobrenome.getText().toString();
         String usuario = editText_usuario.getText().toString();
         String senha = editText_senha.getText().toString();
+
+        SQLiteDatabase db = Globais.db.getReadableDatabase();
+        String query = "SELECT * FROM usuarios WHERE usuario = '" + usuario + "';";
+        Cursor cursor = db.rawQuery(query, null);
+        int ocorrencias = 0;
+        while (cursor.moveToNext()) {
+            ocorrencias++;
+        }
+        if (ocorrencias > 0) {
+            Toast.makeText(this, "Escolha outro nome de usuário. Este já está em uso", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (nome.equals("") || sobrenome.equals("") || usuario.equals("") || senha.equals("") || (!radioButton_professor.isChecked() && !radioButton_funcionario.isChecked())) {
             Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
             return;

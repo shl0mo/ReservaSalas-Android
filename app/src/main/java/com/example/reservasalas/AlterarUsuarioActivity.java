@@ -68,7 +68,10 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
         senha = editText_senha.getText().toString();
         if (radioButton_professor.isChecked()) tipo = "Professor";
         else if (radioButton_funcionario.isChecked()) tipo = "Funcionário";
-
+        if (nome.equals("") || sobrenome.equals("") || usuario.equals("") || senha.equals("") || (!radioButton_professor.isChecked() && !radioButton_funcionario.isChecked())) {
+            Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
+            return;
+        }
         SQLiteDatabase db = Globais.db.getWritableDatabase();
         String query = "UPDATE usuarios SET nome = \"" + nome + "\", sobrenome = \"" + sobrenome + "\", usuario = \""+ usuario +"\", senha = \"" + senha + "\", tipo = \"" + tipo + "\" WHERE id = " + this.id;
         db.execSQL(query);
