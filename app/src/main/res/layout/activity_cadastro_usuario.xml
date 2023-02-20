@@ -172,6 +172,6 @@
             android:layout_height="wrap_content"
             android:width="200dp"
             android:onClick="cancelar"
-            android:text="Cancelar" />
+            android:text="Voltar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

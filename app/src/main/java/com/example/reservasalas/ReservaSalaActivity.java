@@ -2,6 +2,7 @@ package com.example.reservasalas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -34,22 +35,38 @@ public class ReservaSalaActivity extends AppCompatActivity {
         else if (radioButton_lab_graduacao.isChecked()) tipo = "Laboratório de Graduação";
         EditText editText_data = findViewById(R.id.dataReservaSala);
         String data = editText_data.getText().toString();
+        if (numero.equals("") || bloco.equals("") || andar.equals("") || tipo.equals("") || data.equals("")) {
+            Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
+            return;
+        }
         SQLiteDatabase db = Globais.db.getWritableDatabase();
+        Globais.db.onCreate(db);
         String query = "SELECT * FROM salas WHERE numero = \"" + numero + "\" AND bloco = \"" + bloco + "\" AND andar = \"" + andar + "\" AND tipo = \"" + tipo + "\";";
         Cursor cursor = db.rawQuery(query, null);
+        String id_sala = "";
+        while (cursor.moveToNext()) {
+            id_sala = cursor.getString(0);
+        }
+        if (id_sala.equals("")) {
+            Toast.makeText(this, "A sala solicitada não está cadastrada no banco de dados", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        query = "SELECT * FROM reservas WHERE id_sala = \"" + id_sala + "\" AND data = \"" + data + "\";";
+        cursor = db.rawQuery(query, null);
         int ocorrencias = 0;
         while (cursor.moveToNext()) {
             ocorrencias++;
         }
-        if (ocorrencias == 0) {
-            Toast.makeText(this, "A sala solicitada não está cadastrada no banco de dados", Toast.LENGTH_SHORT).show();
+        if (ocorrencias > 0) {
+            Toast.makeText(this, "Falha ao reservar. A sala selecionada já se encontra reservada", Toast.LENGTH_SHORT).show();
             return;
         }
-        query = "SELECT * FROM reservas WHERE ";
-
+        Globais.db.reservaSala(Globais.id, id_sala, data);
+        Toast.makeText(this, "Sala reservada com sucesso", Toast.LENGTH_SHORT).show();
     }
 
     public void cancelar (View v) {
-
+        Intent in = new Intent(ReservaSalaActivity.this, MenuUsuarioActivity.class);
+        startActivity(in);
     }
 }

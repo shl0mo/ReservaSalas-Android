@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String id = "";
         while (cursor.moveToNext()) {
             ocorrencias++;
-            cursor.getString(0);
+            id = cursor.getString(0);
         }
         if (ocorrencias == 0) {
             Toast.makeText(this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();
