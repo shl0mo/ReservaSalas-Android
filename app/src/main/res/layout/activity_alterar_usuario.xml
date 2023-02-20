@@ -139,11 +139,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <RadioButton android:id="@+id/radio_professor"
+                <RadioButton android:id="@+id/radioProfessorAlterarUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Professor" />
-                <RadioButton android:id="@+id/radio_funcionario"
+                <RadioButton android:id="@+id/radioFuncionarioAlterarUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Funcionário" />
