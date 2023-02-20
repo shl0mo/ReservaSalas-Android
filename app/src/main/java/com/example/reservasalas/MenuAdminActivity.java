@@ -19,4 +19,11 @@ public class MenuAdminActivity extends AppCompatActivity {
         Intent in = new Intent(MenuAdminActivity.this, CadastroUsuarioActivity.class);
         startActivity(in);
     }
+
+    public void sairMenuAdmin (View v) {
+        Globais.id = "";
+        Globais.usuario = "";
+        Intent in = new Intent(MenuAdminActivity.this, MainActivity.class);
+        startActivity(in);
+    }
 }
