@@ -73,7 +73,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        String tipo = "";
+        if (radioButton_professor.isChecked()) tipo = "Professor";
+        else if (radioButton_funcionario.isChecked()) tipo = "Funcionário";
+        Globais.db.adicionaUsuario(nome, sobrenome, usuario, senha, tipo);
+        Toast.makeText(this, "Usuário cadastrado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
     public void voltarCadastro (View v) {
