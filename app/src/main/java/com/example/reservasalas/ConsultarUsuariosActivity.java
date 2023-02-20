@@ -21,10 +21,10 @@ public class ConsultarUsuariosActivity extends AppCompatActivity {
 
     public void onStart () {
         super.onStart();
-        adicionaLinha();
+        adicionaLinhas();
     }
 
-    public void adicionaLinha () {
+    public void adicionaLinhas () {
         TableLayout tabela = findViewById(R.id.tabelaUsuarios);
         TableRow cabecalho = new TableRow(this);
         TextView id_cabecalho = new TextView(this);

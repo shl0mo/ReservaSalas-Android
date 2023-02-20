@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ReservaSalas"
         tools:targetApi="31">
         <activity
+            android:name=".ConsultarSalasActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConsultarUsuariosActivity"
             android:exported="false" />
         <activity

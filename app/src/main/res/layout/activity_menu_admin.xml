@@ -72,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="210dp"
+            android:onClick="consultarSalas"
             android:text="Consultar Salas"
             tools:ignore="MissingConstraints" />
 

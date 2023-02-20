@@ -39,6 +39,11 @@ public class MenuAdminActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void consultarSalas (View v) {
+        Intent in = new Intent(MenuAdminActivity.this, ConsultarSalasActivity.class);
+        startActivity(in);
+    }
+
     public void alterarSala (View v) {
         Intent in = new Intent(MenuAdminActivity.this, SelecionarSalaAlteradaActivity.class);
         startActivity(in);
