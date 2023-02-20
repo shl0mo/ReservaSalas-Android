@@ -26,7 +26,7 @@
             android:id="@+id/cadastrarUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="cadastrarUsuario"
             android:text="Cadastrar Usuário"
             tools:ignore="MissingConstraints" />
@@ -35,16 +35,16 @@
             android:id="@+id/consultarUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="consultarUsuario"
-            android:text="Consultar Usuário"
+            android:text="Consultar Usuários"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/alterarUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="alterarUsuario"
             android:text="Alterar Usuário"
             tools:ignore="MissingConstraints" />
@@ -53,7 +53,7 @@
             android:id="@+id/excluirUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="excluirUsuario"
             android:text="Excluir Usuário"
             tools:ignore="MissingConstraints" />
@@ -62,7 +62,7 @@
             android:id="@+id/cadastrarSala"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="cadastrarSala"
             android:text="Cadastrar Sala"
             tools:ignore="MissingConstraints" />
@@ -71,7 +71,7 @@
             android:id="@+id/consultarSalas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:text="Consultar Salas"
             tools:ignore="MissingConstraints" />
 
@@ -79,7 +79,7 @@
             android:id="@+id/alterarSala"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="alterarSala"
             android:text="Alterar Sala"
             tools:ignore="MissingConstraints" />
@@ -88,7 +88,7 @@
             android:id="@+id/excluirSala"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="excluirSala"
             android:text="Excluir Sala"
             tools:ignore="MissingConstraints" />
@@ -97,7 +97,7 @@
             android:id="@+id/gerarRelatorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:text="Gerar Relatório"
             tools:ignore="MissingConstraints" />
 
@@ -105,7 +105,7 @@
             android:id="@+id/sairMenuAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="200dp"
+            android:width="210dp"
             android:onClick="sairMenuAdmin"
             android:text="Sair"
             tools:ignore="MissingConstraints" />
