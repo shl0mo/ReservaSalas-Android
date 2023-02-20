@@ -50,6 +50,7 @@ public class ConsultarUsuariosActivity extends AppCompatActivity {
         usuario_cabecalho.setTextColor(Color.BLACK);
         tipo_cabecalho.setText("Tipo");
         tipo_cabecalho.setPadding(40, 10, 40, 10);
+        tipo_cabecalho.setMinWidth(800);
         tipo_cabecalho.setBackgroundColor(Color.LTGRAY);
         tipo_cabecalho.setTextColor(Color.BLACK);
         cabecalho.addView(id_cabecalho);
@@ -78,6 +79,7 @@ public class ConsultarUsuariosActivity extends AppCompatActivity {
             usuario_linha.setText(cursor.getString(3));
             usuario_linha.setPadding(40, 10, 40, 10);
             tipo_linha.setText(cursor.getString(5));
+            tipo_linha.setMinWidth(800);
             tipo_linha.setPadding(40, 10, 40, 10);
             linha.addView(id_linha);
             linha.addView(nome_linha);

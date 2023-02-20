@@ -20,8 +20,10 @@ public class DB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String tabela_usuarios = "CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, sobrenome TEXT, usuario TEXT, senha TEXT, tipo TEXT);";
         String tabela_salas = "CREATE TABLE IF NOT EXISTS salas (id INTEGER PRIMARY KEY AUTOINCREMENT, numero TEXT, bloco TEXT, andar TEXT, tipo TEXT);";
+        String tabela_reservas = "CREATE TABLE IF NOT EXISTS reservas (id_usuario INTEGER NOT NULL, id_sala INTEGER NOT NULL, data TEXT, FOREIGN KEY (id_usuario) REFERENCES usuarios(id), FOREIGN KEY (is_sala) REFERENCES salas(id));";
         db.execSQL(tabela_usuarios);
         db.execSQL(tabela_salas);
+        db.execSQL(tabela_reservas);
     }
 
 
