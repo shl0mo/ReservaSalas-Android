@@ -20,7 +20,8 @@ public class MenuAdminActivity extends AppCompatActivity {
     }
 
     public void consultarUsuario (View v) {
-
+        Intent in = new Intent(MenuAdminActivity.this, ConsultarUsuariosActivity.class);
+        startActivity(in);
     }
 
     public void alterarUsuario (View v) {

@@ -102,7 +102,7 @@ public class CadastroSalaActivity extends AppCompatActivity {
         Toast.makeText(this, "Sala cadastrada com sucesso", Toast.LENGTH_SHORT).show();
     }
 
-    public void voltar (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(CadastroSalaActivity.this, MenuAdminActivity.class);
         startActivity(in);
     }

@@ -78,7 +78,7 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
         Toast.makeText(this, "Usuário alterado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
-    public void voltarAlterarUsuario (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(AlterarUsuarioActivity.this, SelecionarUsuarioAlteradoActivity.class);
         startActivity(in);
     }

@@ -37,7 +37,7 @@ public class ExcluirSalaActivity extends AppCompatActivity {
         Toast.makeText(this, "Sala excluída com sucesso", Toast.LENGTH_SHORT).show();
     }
 
-    public void voltar (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(ExcluirSalaActivity.this, MenuAdminActivity.class);
         startActivity(in);
     }

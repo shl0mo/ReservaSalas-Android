@@ -171,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="200dp"
-            android:onClick="voltarCadastro"
-            android:text="Voltar" />
+            android:onClick="cancelar"
+            android:text="Cancelar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

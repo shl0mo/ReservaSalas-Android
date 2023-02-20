@@ -41,7 +41,7 @@ public class SelecionarSalaAlteradaActivity extends AppCompatActivity {
         startActivity(in);
     }
 
-    public void voltar (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(SelecionarSalaAlteradaActivity.this, MenuAdminActivity.class);
         startActivity(in);
     }

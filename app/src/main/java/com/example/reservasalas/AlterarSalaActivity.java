@@ -126,7 +126,7 @@ public class AlterarSalaActivity extends AppCompatActivity {
         Toast.makeText(this, "Usuário atualizado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
-    public void voltar (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(AlterarSalaActivity.this, SelecionarSalaAlteradaActivity.class);
         startActivity(in);
     }

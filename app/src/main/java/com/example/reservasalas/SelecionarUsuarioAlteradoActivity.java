@@ -41,7 +41,7 @@ public class SelecionarUsuarioAlteradoActivity extends AppCompatActivity {
         startActivity(in);
     }
 
-    public void voltarUsuarioAlterado (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(SelecionarUsuarioAlteradoActivity.this, MenuAdminActivity.class);
         startActivity(in);
     }

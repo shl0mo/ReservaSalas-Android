@@ -94,7 +94,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         Toast.makeText(this, "Usuário cadastrado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
-    public void voltarCadastro (View v) {
+    public void cancelar (View v) {
         Intent in = new Intent(CadastroUsuarioActivity.this, MenuAdminActivity.class);
         startActivity(in);
     }
