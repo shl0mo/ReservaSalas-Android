@@ -14,11 +14,14 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class AlterarSalaActivity extends AppCompatActivity {
-
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alterar_sala);
+
+        Intent in = getIntent();
+        this.id = in.getStringExtra("Id");
 
         RadioButton radio_sala_reuniao = (RadioButton) findViewById(R.id.radioAlterarSalaReuniao);
         RadioButton radio_auditorio = (RadioButton) findViewById(R.id.radioAlterarAuditorio);
@@ -77,7 +80,7 @@ public class AlterarSalaActivity extends AppCompatActivity {
         String andar = "";
         String tipo = "";
         SQLiteDatabase db = Globais.db.getReadableDatabase();
-        String query = "SELECT * FROM salas WHERE id = 1;";
+        String query = "SELECT * FROM salas WHERE id = " + this.id;
         Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
             numero = cursor.getString(1);
@@ -118,13 +121,13 @@ public class AlterarSalaActivity extends AppCompatActivity {
             return;
         }
         SQLiteDatabase db = Globais.db.getWritableDatabase();
-        String query = "UPDATE salas SET numero = \"" + numero + "\", bloco = \"" + bloco + "\", andar = \"" + andar + "\", tipo = \"" + tipo + "\" WHERE id = 1";
+        String query = "UPDATE salas SET numero = \"" + numero + "\", bloco = \"" + bloco + "\", andar = \"" + andar + "\", tipo = \"" + tipo + "\" WHERE id = " + this.id;
         db.execSQL(query);
         Toast.makeText(this, "Usuário atualizado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
     public void voltar (View v) {
-        Intent in = new Intent(AlterarSalaActivity.this, MenuAdminActivity.class);
+        Intent in = new Intent(AlterarSalaActivity.this, SelecionarSalaAlteradaActivity.class);
         startActivity(in);
     }
 }

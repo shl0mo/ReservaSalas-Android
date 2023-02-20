@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelecionarUsuarioAlteradoActivity">
+    tools:context=".SelecionarSalaAlteradaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,10 +13,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tituloSelecionarUsuarioAlterado"
+            android:id="@+id/tituloSelecionarSalaAlterada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selecione o Id do Usuário"
+            android:text="Selecione o Id da Sala"
             android:textSize="20dp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
@@ -27,14 +27,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/labelIdSelecionarUsuarioAlterado"
+                android:id="@+id/labelIdSelecionarSalaAlterada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Id" />
 
             <EditText
-                android:id="@+id/idSelecionarUsuarioAlterado"
+                android:id="@+id/idSelecionarSalaAlterada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,7 +44,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/botaoSelecionarUsuarioAlterado"
+            android:id="@+id/botaoSelecionarSalaAlterada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="200dp"
@@ -52,11 +52,11 @@
             android:text="Selecionar" />
 
         <Button
-            android:id="@+id/botaoVoltarUsuarioAlterado"
+            android:id="@+id/botaoVoltarSalaAlterada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="200dp"
-            android:onClick="voltarUsuarioAlterado"
+            android:onClick="voltar"
             android:text="Voltar" />
 
     </LinearLayout>

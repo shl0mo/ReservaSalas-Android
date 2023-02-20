@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ReservaSalas"
         tools:targetApi="31">
         <activity
+            android:name=".SelecionarSalaAlteradaActivity"
+            android:exported="false" />
+        <activity
             android:name=".AlterarSalaActivity"
             android:exported="false" />
         <activity
@@ -21,7 +24,7 @@
             android:name=".ExcluirUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".SelecionarUsuarioAlterado"
+            android:name=".SelecionarUsuarioAlteradoActivity"
             android:exported="false" />
         <activity
             android:name=".AlterarUsuarioActivity"

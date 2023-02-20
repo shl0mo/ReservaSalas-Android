@@ -79,7 +79,7 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
     }
 
     public void voltarAlterarUsuario (View v) {
-        Intent in = new Intent(AlterarUsuarioActivity.this, SelecionarUsuarioAlterado.class);
+        Intent in = new Intent(AlterarUsuarioActivity.this, SelecionarUsuarioAlteradoActivity.class);
         startActivity(in);
     }
 }

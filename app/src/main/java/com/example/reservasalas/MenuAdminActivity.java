@@ -24,7 +24,7 @@ public class MenuAdminActivity extends AppCompatActivity {
     }
 
     public void alterarUsuario (View v) {
-        Intent in = new Intent(MenuAdminActivity.this, SelecionarUsuarioAlterado.class);
+        Intent in = new Intent(MenuAdminActivity.this, SelecionarUsuarioAlteradoActivity.class);
         startActivity(in);
     }
 
@@ -39,7 +39,7 @@ public class MenuAdminActivity extends AppCompatActivity {
     }
 
     public void alterarSala (View v) {
-        Intent in = new Intent(MenuAdminActivity.this, AlterarSalaActivity.class);
+        Intent in = new Intent(MenuAdminActivity.this, SelecionarSalaAlteradaActivity.class);
         startActivity(in);
     }
 
