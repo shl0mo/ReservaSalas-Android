@@ -33,6 +33,11 @@ public class MenuAdminActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void cadastrarSala (View v) {
+        Intent in = new Intent(MenuAdminActivity.this, CadastroSalaActivity.class);
+        startActivity(in);
+    }
+
     public void sairMenuAdmin (View v) {
         Globais.id = "";
         Globais.usuario = "";
