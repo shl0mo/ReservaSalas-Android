@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MenuAdminActivity extends AppCompatActivity {
 
@@ -26,6 +25,11 @@ public class MenuAdminActivity extends AppCompatActivity {
 
     public void alterarUsuario (View v) {
         Intent in = new Intent(MenuAdminActivity.this, SelecionarUsuarioAlterado.class);
+        startActivity(in);
+    }
+
+    public void excluirUsuario (View v) {
+        Intent in = new Intent(MenuAdminActivity.this, ExcluirUsuarioActivity.class);
         startActivity(in);
     }
 

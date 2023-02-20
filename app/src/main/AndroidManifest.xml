@@ -12,7 +12,7 @@
         android:theme="@style/Theme.ReservaSalas"
         tools:targetApi="31">
         <activity
-            android:name=".SelecionarUsuarioExcluido"
+            android:name=".ExcluirUsuarioActivity"
             android:exported="false" />
         <activity
             android:name=".SelecionarUsuarioAlterado"
