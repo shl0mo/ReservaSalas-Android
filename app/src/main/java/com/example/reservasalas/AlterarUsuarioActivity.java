@@ -12,14 +12,17 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class AlterarUsuarioActivity extends AppCompatActivity {
-
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alterar_usuario);
 
+        Intent in = getIntent();
+        this.id = in.getStringExtra("Id");
+
         SQLiteDatabase db = Globais.db.getReadableDatabase();
-        String consulta = "SELECT * FROM usuarios WHERE id = 1";
+        String consulta = "SELECT * FROM usuarios WHERE id = " + this.id;
         Cursor cursor = db.rawQuery(consulta, null);
         String nome = "";
         String sobrenome = "";
@@ -67,13 +70,13 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
         else if (radioButton_funcionario.isChecked()) tipo = "Funcionário";
 
         SQLiteDatabase db = Globais.db.getWritableDatabase();
-        String query = "UPDATE usuarios SET nome = \"" + nome + "\", sobrenome = \"" + sobrenome + "\", usuario = \""+ usuario +"\", senha = \"" + senha + "\", tipo = \"" + tipo + "\" WHERE id = 1";
+        String query = "UPDATE usuarios SET nome = \"" + nome + "\", sobrenome = \"" + sobrenome + "\", usuario = \""+ usuario +"\", senha = \"" + senha + "\", tipo = \"" + tipo + "\" WHERE id = " + this.id;
         db.execSQL(query);
         Toast.makeText(this, "Usuário alterado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
     public void voltarAlterarUsuario (View v) {
-        Intent in = new Intent(AlterarUsuarioActivity.this, MenuAdminActivity.class);
+        Intent in = new Intent(AlterarUsuarioActivity.this, SelecionarUsuarioAlterado.class);
         startActivity(in);
     }
 }

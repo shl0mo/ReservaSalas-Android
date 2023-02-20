@@ -25,7 +25,7 @@ public class MenuAdminActivity extends AppCompatActivity {
     }
 
     public void alterarUsuario (View v) {
-        Intent in = new Intent(MenuAdminActivity.this, AlterarUsuarioActivity.class);
+        Intent in = new Intent(MenuAdminActivity.this, SelecionarUsuarioAlterado.class);
         startActivity(in);
     }
 
