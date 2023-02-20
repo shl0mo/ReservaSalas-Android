@@ -2,6 +2,7 @@ package com.example.reservasalas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -69,5 +70,10 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
         String query = "UPDATE usuarios SET nome = \"" + nome + "\", sobrenome = \"" + sobrenome + "\", usuario = \""+ usuario +"\", senha = \"" + senha + "\", tipo = \"" + tipo + "\" WHERE id = 1";
         db.execSQL(query);
         Toast.makeText(this, "Usuário alterado com sucesso", Toast.LENGTH_SHORT).show();
+    }
+
+    public void voltarAlterarUsuario (View v) {
+        Intent in = new Intent(AlterarUsuarioActivity.this, MenuAdminActivity.class);
+        startActivity(in);
     }
 }
