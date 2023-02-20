@@ -2,6 +2,7 @@ package com.example.reservasalas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,7 +15,8 @@ public class MenuUsuarioActivity extends AppCompatActivity {
     }
 
     public void reservarSala (View v) {
-        
+        Intent in = new Intent(MenuUsuarioActivity.this, ReservaSalaActivity.class);
+        startActivity(in);
     }
 
     public void consultarSalas (View v) {
