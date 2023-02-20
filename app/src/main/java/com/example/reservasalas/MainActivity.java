@@ -1,5 +1,6 @@
 package com.example.reservasalas;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_usuario);
+        setContentView(R.layout.activity_main);
     }
 
     protected void onStart () {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         String usuario = editText_usuario.getText().toString();
         EditText editText_senha = findViewById(R.id.senha);
         String senha = editText_senha.getText().toString();
-        if (usuario.equals("")  || senha.equals("")) { // A inserção do usuário e da senha é obrigatória
+        if (usuario.equals("") || senha.equals("")) { // A inserção do usuário e da senha é obrigatória
             Toast.makeText(this, "É necessário preencher todos os campos de dados", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(in);
             return;
         }
-        String sql = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND senha = '" + senha + "';";
+        String sql = "SELECT * FROM usuarios WHERE usuario = '" + usuario + "' AND senha = '" + senha + "';";
         Cursor cursor = Globais.db.getReadableDatabase().rawQuery(sql, null);
         int ocorrencias = 0;
         String id = "";

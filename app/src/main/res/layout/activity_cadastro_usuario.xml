@@ -161,15 +161,17 @@
             android:id="@+id/cadastrarCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:width="200dp"
-            android:text="Cadastrar"
-            android:layout_marginTop="15dp"/>
+            android:onClick="cadastrar"
+            android:text="Cadastrar" />
 
         <Button
             android:id="@+id/voltarCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Voltar"
-            android:width="200dp"/>
+            android:width="200dp"
+            android:onClick="voltarCadastro"
+            android:text="Voltar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
