@@ -54,6 +54,11 @@ public class MenuAdminActivity extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void gerarRelatorio (View v) {
+        Intent in = new Intent(MenuAdminActivity.this, RelatorioActivity.class);
+        startActivity(in);
+    }
+
     public void sairMenuAdmin (View v) {
         Globais.id = "";
         Globais.usuario = "";
