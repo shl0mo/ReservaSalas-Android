@@ -123,7 +123,7 @@ public class AlterarSalaActivity extends AppCompatActivity {
         SQLiteDatabase db = Globais.db.getWritableDatabase();
         String query = "UPDATE salas SET numero = \"" + numero + "\", bloco = \"" + bloco + "\", andar = \"" + andar + "\", tipo = \"" + tipo + "\" WHERE id = " + this.id;
         db.execSQL(query);
-        Toast.makeText(this, "Usuário atualizado com sucesso", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sala atualizada com sucesso", Toast.LENGTH_SHORT).show();
     }
 
     public void cancelar (View v) {
